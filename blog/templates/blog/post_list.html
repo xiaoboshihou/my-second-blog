@@ -7,28 +7,12 @@
 			<h1><a href="">Xiaoboshihou's blog</a></h1>
 		</div>
 
-		<div>
-			<p>published: 20.09.2018, 22:44</p>
-			<h2><a href="">My first post</a></h2>
-			<p>Hi 李嘉琦!</p>
-			<p>It works!</p>
-			<p>Hi 李嘉琦!</p>
-			<p>Nice to meet you!</p>
-			<p>Hi 李嘉琦!</p>
-			<p>How are you!</p>
-		</div>
-
-		<div>
-			<p>published: 20.09.2018, 22:46</p>
-			<h2><a href="">My second post</a></h2>
-			<p>Hi 李嘉琦!</p>
-			<p>What are you doing now!</p>
-			<p>Hi 李嘉琦!</p>
-			<p>What are talking about!</p>
-			<p>Hi 李嘉琦!</p>
-			<p>你不想我啊!</p>
-			<p>Hi 李嘉琦!</p>
-			<p>叫大哥!</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html> 
